@@ -1,0 +1,13 @@
+syntax = "proto3"; // define syntax of proto
+package com.vinay.types; //package for proto
+
+option java_multiple_files = true; // to generate muliplte files from the mesage
+option java_package = "com.vinay.types"; // java package for generated source
+
+message Employee{
+  int32 id = 1;
+  string name = 2;
+  int32 age = 3;
+  bool is_contractor = 4;
+  float salary = 5;
+}

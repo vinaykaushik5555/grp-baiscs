@@ -1,0 +1,21 @@
+syntax = "proto3";
+package com.vinay.composition;
+option java_package = "com.vinay.composition";
+option java_multiple_files = true;
+
+message Address{
+  string street = 1;
+  string  floor = 2;
+  int32 pin_code = 3;
+}
+message Employee{
+  string  name = 1;
+  string department = 3;
+  Address address = 2;
+}
+
+message Organisation{
+  int32  id = 1;
+  string name = 2;
+  repeated Employee employees = 3;
+}

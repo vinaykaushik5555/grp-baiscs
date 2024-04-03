@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package com.vinay.library;
+
+option java_multiple_files = true;
+option java_package = "com.vinay.complex";
+
+
+// A message representing an Author
+message Author {
+  string id = 1;
+  string name = 2;
+}
+
+// A message representing a Book
+message Book {
+  string isbn = 1;
+  string title = 2;
+  repeated Author authors = 3; // List of authors
+  repeated string genres = 4; // Simulating a set of genres using a list
+  map<string, string> properties = 5; // A map for custom properties like ratings, page count, etc.
+  repeated Edition editions = 6; // A list of editions representing a custom collection
+}
+
+// An example of a more complex custom collection: multiple editions of a book
+message Edition {
+  int32 editionNumber = 1;
+  string publicationYear = 2;
+}
+
