@@ -3,7 +3,7 @@ syntax = "proto3";
 package com.vinay.library;
 
 option java_multiple_files = true;
-option java_package = "com.vinay.complex";
+option java_package = "com.vinay.library";
 
 
 // A message representing an Author

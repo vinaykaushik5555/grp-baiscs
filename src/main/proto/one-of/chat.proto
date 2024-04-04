@@ -1,0 +1,29 @@
+syntax = "proto3";
+package com.vinay.oneOf; //ignoring the conventions
+
+option java_multiple_files = true;
+option java_package = "com.vinay.chat";
+
+message ChatMessage{
+  string id = 1;
+  MessageType type = 2; // Explicitly indicate the message type.
+  string deliveryTime = 3;
+
+  oneof content{
+    TextMessage text = 4;
+    ImageMessage image = 5;
+
+  }
+}
+
+message TextMessage{
+  string textContent = 1;
+}
+message ImageMessage{
+  string imageUrl = 1;
+}
+enum MessageType{
+  UNKNOWN = 0; // the index 0 is always the default value
+  TEXT_MESSAGE = 1;
+  IMAGE_MESSAGE = 2;
+}
